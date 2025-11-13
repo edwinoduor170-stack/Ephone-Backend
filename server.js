@@ -3,10 +3,13 @@ import User from './model/usermodel.js';
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const router = express.Router();
-const SECRET_KEY = "mysecretkey";
-const PORT = 3000;
+const SECRET_KEY = process.env.SECRET_KEY || "mysecretkey";
+const PORT = process.env.PORT || 5000;
 const app = express();
 
 // middleware 
@@ -17,7 +20,7 @@ app.use('/', router)
 
 
 // connecting to the database   
-mongoose.connect('mongodb+srv://den-254:Denzel335@cluster1.rcknjxb.mongodb.net/Auth?appName=Cluster1')
+mongoose.connect("mongodb+srv://edwinoduor170:anointed84@cluster0.zjdresl.mongodb.net/?appName=Cluster0")
     .then(() => {
         console.log('Connected to MongoDB');
     })
