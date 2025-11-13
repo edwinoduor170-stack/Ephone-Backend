@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
+import cors from "cors";
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ const app = express();
 
 // middleware 
 app.use(express.json())
+app.use(cors());
 // NOTE BELOW
 app.use('/', router)
 
